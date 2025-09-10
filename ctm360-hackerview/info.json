@@ -1,0 +1,127 @@
+{
+  "name": "ctm360-hackerview",
+  "version": "1.0.0",
+  "label": "CTM360 HackerView",
+  "description": "HackerView is CTM360\u2019s External Attack Surface Management platform, offering automated asset discovery, issue identification, security ratings, and third-party risk management. This collector lets you pull the issues and assets found on attack surface.",
+  "publisher": "Fortinet SE",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "Threat Intelligence",
+  "contributor": "Reem Moustafa",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "https://github.com/fortinet-fortisoar/connector-ctm360-hackerview/blob/release/1.0.0/docs/readme.md",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the Server URL to which you want to connect and perform automated information.",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "value": "https://hackerview.ctm360.com",
+        "tooltip": "Specify the Server URL to which you want to connect and perform automated information."
+      },
+      {
+        "title": "API Key",
+        "description": "Specify the API Key to connect to the endpoint and perform automated operations.",
+        "type": "password",
+        "name": "api_key",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "tooltip": "Specify the API Key to connect to the endpoint and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true.",
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "required": false,
+        "visible": true,
+        "editable": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Issues",
+      "operation": "get_issues",
+      "annotation": "get_issues",
+      "description": "Retrieves a list of issues found on your attack surface from CTM360 HackerView based on the filter criteria that you have specified.",
+      "parameters": [
+        {
+          "title": "First Seen",
+          "description": "Specify the date and time to include only items that appeared for the first time after the given timestamp.",
+          "type": "text",
+          "name": "first_seen",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the date and time to include only items that appeared for the first time after the given timestamp. The date must be in the format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\".",
+          "placeholder": "Format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\"."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Domains",
+      "operation": "get_domains",
+      "annotation": "get_domains",
+      "description": "Retrieves a list of your genuine domains from CTM360 HackerView.",
+      "parameters": [],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Hosts",
+      "operation": "get_hosts",
+      "annotation": "get_hosts",
+      "description": "Retrieves a list of your genuine hostnames from CTM360 HackerView.",
+      "parameters": [],
+      "output_schema": {}
+    },
+    {
+      "title": "Get IP Addresses",
+      "operation": "get_ip_addresses",
+      "annotation": "get_ip_addresses",
+      "description": "Retrieves a list of your associated IP addresses from CTM360 HackerView.",
+      "parameters": [],
+      "output_schema": {}
+    },
+    {
+      "title": "Get Resolved Issues",
+      "operation": "get_resolved_issues",
+      "annotation": "get_resolved_issues",
+      "description": "Retrieves a list of resolved issues found on your attack surface from CTM360 HackerView based on the filter criteria that you have specified.",
+      "parameters": [
+        {
+          "title": "From Date",
+          "description": "(Optional) Specify the date and time to retrieve results that include only those items that were seen after the specified timestamp.",
+          "type": "text",
+          "name": "from_date",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "(Optional) Specify the date and time to retrieve results that include only those items that were seen after the specified timestamp. The date must be in the format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\".",
+          "placeholder": "Format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\"."
+        },
+        {
+          "title": "To Date",
+          "description": "(Optional) Specify the date and time to retrieve results that include only those items that were seen before the specified timestamp.",
+          "type": "text",
+          "name": "to_date",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "(Optional) Specify the date and time to retrieve results that include only those items that were seen before the specified timestamp. The date must be in the format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\".",
+          "placeholder": "Format DD-MM-YYYY hh:mm, for example: \"01-01-2025 00:00\"."
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}

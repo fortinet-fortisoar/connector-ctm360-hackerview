@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2025 Fortinet Inc
+Copyright end
+"""
+
 import requests
 from connectors.core.connector import get_logger, ConnectorError
 
@@ -76,7 +83,7 @@ def get_boolean_string(value):
 
 def filter_params(params):
     filtered_params = {k: v for k,
-                       v in params.items() if v is not None and v != ''}
+    v in params.items() if v is not None and v != ''}
     return filtered_params
 
 

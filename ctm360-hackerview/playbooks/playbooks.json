@@ -1,0 +1,363 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "62f19c20-4f85-4fbe-898f-66ec48d82a9a",
+          "collection": "/api/3/workflow_collections/66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+          "steps": [
+            {
+              "uuid": "2531e9a3-3500-459d-a758-10ffd31b32f6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "83eca6fb-1bdf-4456-9721-e0bba9e135a5",
+              "@type": "WorkflowStep",
+              "name": "Get Issues",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "CTM360 HackerView",
+                "config": "",
+                "params": {
+                  "first_seen": ""
+                },
+                "version": "1.0.0",
+                "connector": "ctm360-hackerview",
+                "operation": "get_issues",
+                "operationTitle": "Get Issues"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of issues found on your attack surface from CTM360 HackerView based on the filter criteria that you have specified.",
+          "name": "Get Issues",
+          "tag": "#CTM360 HackerView",
+          "recordTags": [
+            "Ctm360",
+            "ctm360-hackerview"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2531e9a3-3500-459d-a758-10ffd31b32f6",
+          "routes": [
+            {
+              "uuid": "c5bc5f44-f511-40c7-8a20-ba891ba208ba",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Issues",
+              "sourceStep": "/api/3/workflow_steps/2531e9a3-3500-459d-a758-10ffd31b32f6",
+              "targetStep": "/api/3/workflow_steps/83eca6fb-1bdf-4456-9721-e0bba9e135a5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a2092252-7c71-4451-bee1-f0df05900192",
+          "collection": "/api/3/workflow_collections/66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+          "steps": [
+            {
+              "uuid": "7479eeee-a98f-43d8-9a63-5493a556a1fc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "249ea048-a6af-4494-bb8c-72f014fb6584",
+              "@type": "WorkflowStep",
+              "name": "Get Domains",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "CTM360 HackerView",
+                "config": "",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ctm360-hackerview",
+                "operation": "get_domains",
+                "operationTitle": "Get Domains"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of your genuine domains from CTM360 HackerView.",
+          "name": "Get Domains",
+          "tag": "#CTM360 HackerView",
+          "recordTags": [
+            "Ctm360",
+            "ctm360-hackerview"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7479eeee-a98f-43d8-9a63-5493a556a1fc",
+          "routes": [
+            {
+              "uuid": "2171d230-44b7-4f76-9f42-7f14253c98d4",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domains",
+              "sourceStep": "/api/3/workflow_steps/7479eeee-a98f-43d8-9a63-5493a556a1fc",
+              "targetStep": "/api/3/workflow_steps/249ea048-a6af-4494-bb8c-72f014fb6584"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "beec8333-12f7-4ab8-8eaa-6fbb933692a3",
+          "collection": "/api/3/workflow_collections/66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+          "steps": [
+            {
+              "uuid": "d5bd362a-ef2c-44a5-b7d0-0cac4304bf95",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9e6a4574-bd37-469e-8683-0e22b83db476",
+              "@type": "WorkflowStep",
+              "name": "Get Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "CTM360 HackerView",
+                "config": "",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ctm360-hackerview",
+                "operation": "get_hosts",
+                "operationTitle": "Get Hosts"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of your genuine hostnames from CTM360 HackerView.",
+          "name": "Get Hosts",
+          "tag": "#CTM360 HackerView",
+          "recordTags": [
+            "Ctm360",
+            "ctm360-hackerview"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d5bd362a-ef2c-44a5-b7d0-0cac4304bf95",
+          "routes": [
+            {
+              "uuid": "709cf0c1-aae7-4f67-9e6a-cc8ea382b575",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Hosts",
+              "sourceStep": "/api/3/workflow_steps/d5bd362a-ef2c-44a5-b7d0-0cac4304bf95",
+              "targetStep": "/api/3/workflow_steps/9e6a4574-bd37-469e-8683-0e22b83db476"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "36d7e9c6-4c00-4dcb-89bb-9a9fe1a227b4",
+          "collection": "/api/3/workflow_collections/66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+          "steps": [
+            {
+              "uuid": "4551e687-76e4-470e-b653-f1b32cca34ed",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "3c000c5c-477f-4a31-8f1e-a55f8c5a02a1",
+              "@type": "WorkflowStep",
+              "name": "Get IP Addresses",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "CTM360 HackerView",
+                "config": "",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ctm360-hackerview",
+                "operation": "get_ip_addresses",
+                "operationTitle": "Get IP Addresses"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of your associated IP addresses from CTM360 HackerView.",
+          "name": "Get IP Addresses",
+          "tag": "#CTM360 HackerView",
+          "recordTags": [
+            "Ctm360",
+            "ctm360-hackerview"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4551e687-76e4-470e-b653-f1b32cca34ed",
+          "routes": [
+            {
+              "uuid": "f8d827dc-7491-4d8c-b81d-51f0f659ab6c",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP Addresses",
+              "sourceStep": "/api/3/workflow_steps/4551e687-76e4-470e-b653-f1b32cca34ed",
+              "targetStep": "/api/3/workflow_steps/3c000c5c-477f-4a31-8f1e-a55f8c5a02a1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2740b2db-527a-4a56-83a1-6c0467446fdb",
+          "collection": "/api/3/workflow_collections/66cd0c07-3bb3-43f3-9080-155271fd1d7f",
+          "steps": [
+            {
+              "uuid": "4b24c08d-9398-4c79-8122-59d6526b6a70",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "283f37c6-53eb-4e4d-b2ee-0fd65b9d26af",
+              "@type": "WorkflowStep",
+              "name": "Get Resolved Issues",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "CTM360 HackerView",
+                "config": "",
+                "params": {
+                  "from_date": "",
+                  "to_date": ""
+                },
+                "version": "1.0.0",
+                "connector": "ctm360-hackerview",
+                "operation": "get_resolved_issues",
+                "operationTitle": "Get Resolved Issues"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of resolved issues found on your attack surface from CTM360 HackerView based on the filter criteria that you have specified.",
+          "name": "Get Resolved Issues",
+          "tag": "#CTM360 HackerView",
+          "recordTags": [
+            "Ctm360",
+            "ctm360-hackerview"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4b24c08d-9398-4c79-8122-59d6526b6a70",
+          "routes": [
+            {
+              "uuid": "dcf8c864-ad66-44ee-b2c5-3eb39c576dd5",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resolved Issues",
+              "sourceStep": "/api/3/workflow_steps/4b24c08d-9398-4c79-8122-59d6526b6a70",
+              "targetStep": "/api/3/workflow_steps/283f37c6-53eb-4e4d-b2ee-0fd65b9d26af"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - CTM360 HackerView - 1.0.0",
+      "description": "HackerView is CTM360\u2019s External Attack Surface Management platform, offering automated asset discovery, issue identification, security ratings, and third-party risk management. This collector lets you pull the issues and assets found on attack surface.",
+      "visible": true,
+      "recordTags": [
+        "Ctm360",
+        "ctm360-hackerview"
+      ]
+    }
+  ]
+}
